@@ -1,0 +1,63 @@
+body {
+  background: linear-gradient(90deg, #1CB5E0 0%, #000851 100%);
+  padding: 0 24px;
+  color: white; /* Change my color to yellow */
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.opt-in-form{
+  display: flex;
+  /* flex-direction: column; */
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.half,.full{
+  padding: 20px;
+  outline: none;
+  border:none;
+  border-radius:10px;
+  font-size: 20px;
+}
+
+.half-input-container{
+  width: 20%;
+}
+.full-input-container{
+  width: 30%;
+}
+.full-input-container,.half-input-container{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.full-input-container label, .half-input-container label{
+  position: absolute;
+  pointer-events: none;
+  transform: translate(0, 10px) scale(1);
+  transform-origin: top left;
+  transition: 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+  color: #6f81a5;
+  font-size: 20px;
+  left: 16px;
+  font-family: nunito sans;
+}
+
+.full-input-container:focus-within label,.half-input-container:focus-within label {
+  transform: translate(0, 2px) scale(0.8);
+  color: #0a53e4;
+}
+
+.full-input-container input:not(:placeholder-shown) + label,
+.half-input-container input:not(:placeholder-shown) + label{
+  transform: translate(0, 2px) scale(0.8);
+  color: #0a53e4;
+/*   color:red; */
+}
+
+/* input:not(:placeholder-shown) { */
